@@ -14,22 +14,22 @@ export class CreateSettings1619628862467 implements MigrationInterface {
                     },
                     {
                         name: "username",
-                        type: "varchar"
+                        type: "varchar",
                     },
                     {
                         name: "chat",
-                        type: "Boolean",
-                        default: true
+                        type: "boolean",
+                        default: true,
                     },
                     {
                         name: "updated_at",
                         type: "timestamp",
-                        default: "now()"
+                        default: "now()",
                     },
                     {
                         name: "created_at",
                         type: "timestamp",
-                        default: "now()"
+                        default: "now()",
                     }
                 ]
             })
@@ -37,6 +37,7 @@ export class CreateSettings1619628862467 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
+        await queryRunner.dropTable("settings")
     }
 
 }
